@@ -1,0 +1,33 @@
+{% extends 'blog/base.html' %}
+
+{% block head_title %}{{ blog.title }}{% endblock %}
+
+{% block title %}
+    Editing - {{ blog.title }}
+{% endblock %}
+
+{% block content %}
+    <form action="{% url 'blog:update_existing_blog' blog.slug %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="blog_title" value="{{ blog.title }}" /><br/>
+
+        <select name="blog_category">
+            {% for cat in category_list %}
+                {% if cat == blog.category %}
+                    <option selected value="{{ cat.slug }}">{{ cat.title }}</option>
+                {% else %}
+                    <option value="{{ cat.slug }}">{{ cat.title }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+
+        <textarea name="blog_body">{{ blog.body }}</textarea>
+        <input type="submit" value='Update' />
+    </form>
+{% endblock %}
+
+
+{% block footer %}
+<p><label>Published:</label> {{ blog.posted }}</p>
+{% endblock %}
+

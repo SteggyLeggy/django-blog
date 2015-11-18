@@ -1,0 +1,53 @@
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Montserrat,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #494949;
+    text-rendering: optimizeLegibility;
+    margin-top: .2rem;
+    margin-bottom: .5rem;
+    line-height: 1.4;
+}
+
+input[type=text] input[type=password] {
+    padding: 0;
+    height: 30px;
+    left: 0;
+    outline: none;
+    border: 1px solid #cdcdcd;
+    border-color: rgba(0,0,0,.15);
+    background-color: white;
+    font-size: 16px;
+}
+
+textarea {
+    height: 300px;
+    width: 630px;
+}
+
+.btn
+{
+    border-style: solid;
+    border-width: 0;
+    cursor: pointer;
+    font-weight: 400;
+    margin: 0 0 1.25rem;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    -webkit-appearance: none;
+    display: inline-block;
+    background-color: #0BA79F;
+    border-color: #0cb7ae;
+    border-radius: .1875rem;
+    transition: background-color 300ms ease-out;
+    font-size: .75rem;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    letter-spacing: 3px;
+    line-height: .9375rem;
+    font-family: Montserrat,sans-serif;
+    color: #fff;
+}
+

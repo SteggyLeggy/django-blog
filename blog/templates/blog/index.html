@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+{% if latest_blog_list %}
+    <ul>
+    {% for blog in latest_blog_list %}
+        <li><a href="{% url 'blog:detail' blog.slug %}">{{ blog.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No blog posts are available.</p>
+{% endif %}
+{% if user.is_authenticated %}
+<a href="{% url 'blog:create_blog' %}">Create New Blog Post</a>
+{% endif %}
+{% endblock %}

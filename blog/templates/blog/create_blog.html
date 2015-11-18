@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+
+{% block head_title %}{% endblock %}
+
+{% block title %}
+    Create New Blog
+{% endblock %}
+
+{% block content %}
+    <form action="{% url 'blog:save_new_blog' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="blog_title" value="" /><br/>
+
+        <select name="blog_category">
+            {% for cat in category_list %}
+                <option value="{{ cat.slug }}">{{ cat.title }}</option>
+            {% endfor %}
+        </select>
+
+        <textarea name="blog_body"></textarea>
+        <input type="submit" value='Create' />
+    </form>
+{% endblock %}
